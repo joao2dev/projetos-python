@@ -1,0 +1,21 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <h1>Usuarios</h1>
+    <table class="table table-striped table-responsive table-bordered">
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>Idade</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.id_usuario}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+    <a href="{% url 'delete_database' %}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar todos os usuários?')">Deletar usuarios</a></div>
+
+{% endblock %}
